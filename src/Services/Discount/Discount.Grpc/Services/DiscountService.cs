@@ -12,9 +12,9 @@ namespace Discount.Grpc.Services
     public class DiscountService: DiscountProtoService.DiscountProtoServiceBase
     {
         private IDiscountRepository _repository;
-        private ILogger _logger;
+        private ILogger<DiscountService> _logger;
         private IMapper _mapper;
-        public DiscountService(IDiscountRepository repository, ILogger logger, IMapper mapper)
+        public DiscountService(IDiscountRepository repository, ILogger<DiscountService> logger, IMapper mapper)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
